@@ -14,3 +14,9 @@
 * Create the *header.php* and *footer.php* files and use the *wp_head()* and *wp_footer()* action hooks respectively.
 * Create the *front-page.php* file wherein the custom page design for the *Home* page will be implemented later on.
 * Use the *get_header()* and *get_footer()* functions in *front-page.php*.
+
+## 0.0.3 *functions.php* & *wp_enqueue_scripts*
+* Create the *functions.php* file.
+* In order to be able to access scripts and styles, the action hook *wp_enqueue_scripts* is added with *add_action* in *functions.php*. It is calling the function *techco_enqueue*.
+* Create the folders *includes/front/* and the file *includes/front/enqueue.php*, where the function *techco_enqueue* will be defined.
+* Include *enqueue.php* in *functions.php*. Use *get_template_directory* to get the correct path.
