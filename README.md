@@ -31,3 +31,11 @@
 * In *techco_enqueue* register the not bundled and the custom scripts with *wp_register_script*. The fifth parameter is set to true so that the scripts are loaded in the footer area, in the end of the html code.
 * In *techco_enqueue* use *wp_enqueue_script* to enqueue bundled scripts, such as jQuery with the handle *jquery*.
 * Enqueue the rest of the registered scripts with their assigned handles.
+
+## 0.0.5 Add menu support and display menus
+* Add the function *add_theme_support()* with the *'menus'* parameter in *functions.php*.
+* In the *includes* folder create the file *setup.php*. Create the *techco_setup_theme* function wherein the primary navigation menu will be registered with *register_nav_menu*, with the *primary* location and the description *Primary Header Navigation*. The double underscore function is used for translating purposes in the text domain of the theme.
+* Include *setup.php* in *functions.php*.
+* In *functions.php* add an action that calls the hook *after_setup_theme* which calls the function *techco_setup_theme*.
+* In *header.php* add a bootstrap navigation menu code snippet. Then use *wp_nav_menu* in order to present a header menu in the theme. Configure the parameter array depending on the html code used. For use with bootstrap, the *container* is set to false and *menu_class* is set to the relevant classes, for instance *nav* and *navbar-nav*.
+* The menu can be displayed in the website after it is added and configured via the Dashboard.
