@@ -39,3 +39,13 @@
 * In *functions.php* add an action that calls the hook *after_setup_theme* which calls the function *techco_setup_theme*.
 * In *header.php* add a bootstrap navigation menu code snippet. Then use *wp_nav_menu* in order to present a header menu in the theme. Configure the parameter array depending on the html code used. For use with bootstrap, the *container* is set to false and *menu_class* is set to the relevant classes, for instance *nav* and *navbar-nav*.
 * The menu can be displayed in the website after it is added and configured via the Dashboard.
+
+## 0.0.6 Add *widgets_init* and format a sidebar
+* In *functions.php* add the *widgets_init* hook calling the *techco_widgets* function.
+* In the *includes/front* folder create the file *widgets.php* and define the *techco_widgets* function.
+* Include *widgets.php* in *functions.php*.
+* In *techco_widgets* call *register_sidebar*.  
+* Create the *sidebar.php* file, check with *is_active_sidebar()* and call *dynamic_sidebar()*.
+* Call the *get_sidebar()* function in the html portion where we want it displayed. Do this in *front-page.php* for now, pick later the appropriate page templates where the sidebar presence is wanted.
+* In *register_sidebar()* set the *before_widget* key's value to include placeholders such as *%1$s* and *%2$s* so that other widgets might add own classes there. Format the rest of the keys' values with opening and closing tags relative to the html content.
+* In the *Dashboard-Appearance* the widgets tab is shown. If available WordPress widgets are added to the new sidebar, it will appear in the relevant pages.

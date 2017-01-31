@@ -41,6 +41,13 @@
     color: #000;
 }
 
+
+#sidebar li {
+    list-style-type: none;
+    /*margin-left: .4em;*/
+    text-align: left;
+}
+
 .techcomment, .comment-form {
     border: 1.5px solid lightgrey;
     padding: 0.5em;
